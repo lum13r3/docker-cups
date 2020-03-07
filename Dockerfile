@@ -10,8 +10,8 @@ FROM alpine
 #
 
 # Set metadata
-LABEL maintainer="Thomas Bendler <project@bendler-net.de>"
-LABEL version="1.3"
+LABEL maintainer="Maurice Lumiere"
+LABEL version="2.0"
 LABEL description="Creates an Alpine container serving a CUPS instance accessible through airplay as well"
 
 # Set environment
@@ -22,7 +22,7 @@ ENV TERM xterm
 WORKDIR /opt/cups
 
 # Install CUPS/AVAHI
-RUN apk update --no-cache && apk add --no-cache cups cups-filters avahi inotify-tools
+RUN apk update --no-cache && apk add --no-cache cups cups-filters avahi inotify-tools cups-libs cups-pdf cups-client cups-filters gutenprint 
 
 # Copy configuration files
 COPY root /
